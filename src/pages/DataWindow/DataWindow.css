@@ -1,0 +1,7 @@
+.data-window-border {
+    width: 25%;        /* Zajmuje 1/4 szerokości ekranu */
+    height: 70vh;
+    border: 3px solid #000; /* Obramowanie o grubości 1px i kolorze czarnym */
+    box-sizing: border-box; /* Aby szerokość komponentu uwzględniała obramowanie */
+    border-radius: 10px; 
+  }

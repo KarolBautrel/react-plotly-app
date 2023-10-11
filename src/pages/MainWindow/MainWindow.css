@@ -1,0 +1,5 @@
+.main-window-container {
+    margin-top: 5px;
+    display: flex;          /* Ustala układ na flex */
+    justify-content: space-between; /* Rozdziela dzieci (komponenty) równomiernie */
+  }
