@@ -1,17 +1,14 @@
 export type DataProps = {
-  xAxisScatter: number[];
-  setXaxisScatter: React.Dispatch<React.SetStateAction<number[]>>;
+  xAxisScatter: string[];
+  setXaxisScatter: React.Dispatch<React.SetStateAction<string[]>>;
   yAxisScatter: number[];
   setYaxisScatter: React.Dispatch<React.SetStateAction<number[]>>;
-  xAxisbar: number[];
-  setXAxisbar: React.Dispatch<React.SetStateAction<number[]>>;
-  yAxisbar: number[];
-  setYAxisbar: React.Dispatch<React.SetStateAction<number[]>>;
+  chartType?: string;
+  setChartType: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export type ChartProps = {
-  xAxisScatter: number[];
+  xAxisScatter: string[];
   yAxisScatter: number[];
-  xAxisbar: number[];
-  yAxisbar: number[];
+  chartType?: any;
 };
