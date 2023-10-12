@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useChartContext } from "../../context/useChartContext";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 export const Navbar = () => {
+  const { setChartDisplay } = useChartContext();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -20,8 +21,12 @@ export const Navbar = () => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Plot App
           </Typography>
-          <Button color="inherit">Option One</Button>
-          <Button color="inherit">Option Two</Button>
+          <Button color="inherit" onClick={() => setChartDisplay("scatter")}>
+            Scatter/Bar
+          </Button>
+          <Button color="inherit" onClick={() => setChartDisplay("pie")}>
+            Pie
+          </Button>
           <Button color="inherit">Option Three</Button>
         </Toolbar>
       </AppBar>

@@ -1,12 +1,12 @@
 import { useState } from "react";
-import type { DataProps } from "../MainWindow/types";
+import type { DataScatterProps } from "../MainWindow/types";
 import { generateDateList } from "../../utils/dateListGenerator";
-export const DataWindowForm = ({
+export const DataWindowScatterForm = ({
   setXaxisScatter,
   yAxisScatter,
   setYaxisScatter,
   setChartType,
-}: DataProps) => {
+}: DataScatterProps) => {
   const [fromDatetime, setFromDatetime] = useState("");
   const [toDatetime, setToDatetime] = useState("");
   const [localYAxisScatter, setLocalYAxisScatter] = useState(
@@ -58,6 +58,7 @@ export const DataWindowForm = ({
           >
             <option value="bar">Bar</option>
             <option value="scatter">Scatter</option>
+            <option value="pie">Pie</option>
           </select>
         </div>
         <button type="button" onClick={onSubmit}>

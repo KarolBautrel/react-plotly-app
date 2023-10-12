@@ -1,4 +1,4 @@
-export type DataProps = {
+export type DataScatterProps = {
   xAxisScatter: string[];
   setXaxisScatter: React.Dispatch<React.SetStateAction<string[]>>;
   yAxisScatter: number[];
@@ -7,7 +7,16 @@ export type DataProps = {
   setChartType: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export type ChartProps = {
+export type DataPieProps = {
+  setNumericPieValues: React.Dispatch<React.SetStateAction<number[]>>;
+  setLegendPieValues: React.Dispatch<React.SetStateAction<string[]>>;
+};
+export type ChartPieProps = {
+  numericPieValues: number[];
+  legendPieValues: string[];
+};
+
+export type ChartScatterProps = {
   xAxisScatter: string[];
   yAxisScatter: number[];
   chartType?: any;
