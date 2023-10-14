@@ -1,8 +1,14 @@
-import "./DataWindow.css";
+import "../MainWindow/MainWindow.css";
 import { DataWindowScatterForm } from "./DataWindowScatterForm";
 import { DataWindowPieForm } from "./DataWindowPieForm";
 import type { DataScatterProps, DataPieProps } from "../MainWindow/types";
-type CombinedProps = DataScatterProps & DataPieProps & { chartDisplay: string };
+type CombinedProps = DataScatterProps &
+  DataPieProps & {
+    chartDisplay: string;
+    onDragStart: React.DragEventHandler<HTMLDivElement>;
+    onDragOver: React.DragEventHandler<HTMLDivElement>;
+    onDrop: React.DragEventHandler<HTMLDivElement>;
+  };
 
 export const DataWindow = ({
   xAxisScatter,
@@ -13,9 +19,18 @@ export const DataWindow = ({
   setNumericPieValues,
   setLegendPieValues,
   chartDisplay,
+  onDragStart,
+  onDragOver,
+  onDrop,
 }: CombinedProps) => {
   return (
-    <div className="data-window-border">
+    <div
+      className="left-window-border"
+      draggable
+      onDragStart={onDragStart}
+      onDragOver={onDragOver}
+      onDrop={onDrop}
+    >
       {chartDisplay && chartDisplay === "scatter" ? (
         <DataWindowScatterForm
           setChartType={setChartType}

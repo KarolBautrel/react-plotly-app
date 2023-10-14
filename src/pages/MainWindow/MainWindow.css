@@ -1,5 +1,21 @@
 .main-window-container {
-    margin-top: 5px;
-    display: flex;          /* Ustala układ na flex */
-    justify-content: space-between; /* Rozdziela dzieci (komponenty) równomiernie */
-  }
+  margin-top: 5px;
+  display: flex;
+}
+
+
+.left-window-border {
+  flex-basis: 50%; /* Początkowa szerokość */
+  height: 70vh;
+  border: 3px solid #000;
+  box-sizing: border-box;
+  border-radius: 10px; 
+}
+
+.right-window-border {
+  flex-basis: 50%; /* Początkowa szerokość */
+  border: 3px solid #000;
+  box-sizing: border-box;
+  border-radius: 10px; 
+  border-left: none; /* Usuwa lewą stronę obramowania */
+}
