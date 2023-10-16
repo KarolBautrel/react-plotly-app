@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useChartContext } from "../../context/useChartContext";
+import { useSelector } from "react-redux";
 import "./MainWindow.css";
 import { ChartWindow } from "../ChartWindow/ChartWindow";
 import { DataWindow } from "../DataWindow/DataWindow";
@@ -22,7 +22,8 @@ export const MainWindow: React.FC = () => {
     "b",
     "c",
   ]);
-  const { chartDisplay } = useChartContext();
+  const chartDisplay = useSelector((state: any) => state.chartDisplay);
+  const headerDisplay = useSelector((state: any) => state.headerDisplay);
   const handleDragStart = (item: string) => {
     setDraggedItem(item);
   };
@@ -64,6 +65,7 @@ export const MainWindow: React.FC = () => {
     onDragStart: () => handleDragStart("ChartWindow"),
     onDragOver: handleDragOver,
     onDrop: () => handleDrop("ChartWindow"),
+    headerDisplay: headerDisplay,
   };
   return (
     <div className="main-window-container">

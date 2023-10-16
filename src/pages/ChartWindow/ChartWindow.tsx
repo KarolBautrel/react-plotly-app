@@ -8,6 +8,7 @@ type CombinedProps = ChartScatterProps &
     onDragStart: React.DragEventHandler<HTMLDivElement>;
     onDragOver: React.DragEventHandler<HTMLDivElement>;
     onDrop: React.DragEventHandler<HTMLDivElement>;
+    headerDisplay: string;
   };
 
 export const ChartWindow = ({
@@ -20,6 +21,7 @@ export const ChartWindow = ({
   onDragStart,
   onDragOver,
   onDrop,
+  headerDisplay,
 }: CombinedProps) => {
   return (
     <div
@@ -29,6 +31,7 @@ export const ChartWindow = ({
       onDragOver={onDragOver}
       onDrop={onDrop}
     >
+      <h4>{headerDisplay}</h4>
       {(chartDisplay && chartDisplay === "bar") ||
       chartDisplay === "scatter" ? (
         <ScatterBarChart

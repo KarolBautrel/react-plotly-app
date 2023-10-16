@@ -1,20 +1,19 @@
 import { Navbar } from "./components/Navbar/Navbar";
 import { MainWindow } from "./pages/MainWindow/MainWindow";
-import { ChartContext } from "./context/ChartDisplayContext";
-import { useState } from "react";
+import { Provider } from "react-redux";
+import store from "./store";
 function App() {
-  const [chartDisplay, setChartDisplay] = useState<string>("pie");
   return (
-    <>
-      <ChartContext.Provider value={{ chartDisplay, setChartDisplay }}>
+    <Provider store={store}>
+      <>
         <div>
           <Navbar />
         </div>
         <div>
           <MainWindow />
         </div>
-      </ChartContext.Provider>
-    </>
+      </>
+    </Provider>
   );
 }
 
