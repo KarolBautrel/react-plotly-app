@@ -1,17 +1,20 @@
-import { useDispatch } from "react-redux";
-import { setChartDisplay } from "../../actions/chartActions";
-import { setHeaderDisplay } from "../../actions/headerActions";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-export const Navbar = () => {
-  const dispatch = useDispatch();
+interface NavbarProps {
+  setChartDisplay: (type: string) => void;
+  setHeaderDisplay: (type: string) => void;
+}
+export const Navbar: React.FC<NavbarProps> = ({
+  setChartDisplay,
+  setHeaderDisplay,
+}) => {
   const handleChartDisplay = (type: string) => {
-    dispatch(setChartDisplay(type));
-    dispatch(setHeaderDisplay(type));
+    setChartDisplay(type);
+    setHeaderDisplay(type);
   };
 
   return (

@@ -1,5 +1,5 @@
-import { Navbar } from "./components/Navbar/Navbar";
-import { MainWindow } from "./pages/MainWindow/MainWindow";
+import MainWindowContainer from "./containers/MainWindowContainer";
+import NavbarContainer from "./containers/NavbarContainer";
 import { Provider } from "react-redux";
 import store from "./store";
 function App() {
@@ -7,10 +7,10 @@ function App() {
     <Provider store={store}>
       <>
         <div>
-          <Navbar />
+          <NavbarContainer />
         </div>
         <div>
-          <MainWindow />
+          <MainWindowContainer />
         </div>
       </>
     </Provider>

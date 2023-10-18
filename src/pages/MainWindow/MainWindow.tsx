@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
 import "./MainWindow.css";
 import { ChartWindow } from "../ChartWindow/ChartWindow";
 import { DataWindow } from "../DataWindow/DataWindow";
 
-export const MainWindow: React.FC = () => {
+export const MainWindow: React.FC<{
+  chartDisplay: string;
+  headerDisplay: string;
+}> = ({ chartDisplay, headerDisplay }) => {
   const [windowPosition, setWindowPosition] = useState<number>(1);
 
   const [draggedItem, setDraggedItem] = useState<string | null>(null);
@@ -22,8 +24,6 @@ export const MainWindow: React.FC = () => {
     "b",
     "c",
   ]);
-  const chartDisplay = useSelector((state: any) => state.chartDisplay);
-  const headerDisplay = useSelector((state: any) => state.headerDisplay);
   const handleDragStart = (item: string) => {
     setDraggedItem(item);
   };
